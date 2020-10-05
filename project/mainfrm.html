@@ -1,0 +1,221 @@
+﻿<html>
+<title>Розклад</title>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
+          id="bootstrap-css">
+	
+	<link rel="stylesheet" href="datepicker/dist/datepicker.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/season.css" />
+	<link rel="stylesheet" href="css/buttons.css" />
+	<link rel="stylesheet" href="css/schedule.css" />
+	
+	<script src="datepicker/dist/datepicker.min.js"></script>
+	
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+
+
+</head>
+
+<body>
+
+<div class="main_window">
+	<div class="header">Пошук вільних аудиторій </div>
+
+
+	<div class="seasons">
+		<div class="container">
+			<div class="row">
+				<div class="btn-group btn-group-justified" data-toggle="buttons">
+					<label class="btn btn-success active btn-season"  data-season="8">
+						<input type="radio" name="season" id="season1" autocomplete="off" checked> Осінь
+					</label>
+					<label class="btn btn-success btn-season"  data-season="1">
+						<input type="radio" name="season" id="season2" autocomplete="off"> Весна
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="months_container"></div>
+
+
+	<div class="lesson_container">
+		<div class="container">
+			<div class="row">
+				<div class="btn-group btn-group-justified" data-toggle="buttons">
+					<label class="btn btn-success btn-lesson active"  data-lesson="1">
+						<input type="radio" name="options" id="option1" autocomplete="off" checked> 1 пара
+					</label>
+					<label class="btn btn-success btn-lesson" data-lesson="2">
+						<input type="radio" name="options" id="option2" autocomplete="off"> 2 пара
+					</label>
+					<label class="btn btn-success btn-lesson" data-lesson="3">
+						<input type="radio" name="options" id="option3" autocomplete="off"> 3 пара
+					</label>
+					<label class="btn btn-success btn-lesson" data-lesson="4">
+						<input type="radio" name="options" id="option4" autocomplete="off"> 4 пара
+					</label>
+					<label class="btn btn-success btn-lesson" data-lesson="5">
+						<input type="radio" name="options" id="option5" autocomplete="off"> 5 пара
+					</label>
+					<label class="btn btn-success btn-lesson" data-lesson="6">
+						<input type="radio" name="options" id="option6" autocomplete="off"> 6 пара
+					</label>
+					<label class="btn btn-success btn-lesson" data-lesson="7">
+						<input type="radio" name="options" id="option7" autocomplete="off"> 7 пара
+					</label>
+					<label class="btn btn-success btn-lesson" data-lesson="8">
+						<input type="radio" name="options" id="option8" autocomplete="off"> 8 пара
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="general col-lg-5">
+		<div class="container">
+			<div class="row">
+				<div class="btn-group btn-group-justified" data-toggle="buttons">
+					<div class="btnHeader"><p><b>Тип:</b></p></div>
+
+				<label class="btn btn-success btn-type active" data-type="0">
+					<input type="radio"  autocomplete="off" onclick="filterFunction(this.value)" checked> Всі
+				</label>	
+				<label class="btn btn-success btn-type" data-type="лек">
+					<input type="radio"  value="лек" onclick="filterFunction(this.value)" autocomplete="off"> Лекційна
+				</label>
+				<label class="btn btn-success btn-type" data-type="лаб">
+					<input type="radio"  value="лаб" onclick="filterFunction(this.value)" autocomplete="off"> Лабораторія
+				</label>
+				<label class="btn btn-success btn-type" data-type="комп">
+					<input type="radio"  value="комп" onclick="filterFunction(this.value)" autocomplete="off"> Комп'ютерна
+				</label>
+				<label class="btn btn-success btn-type" data-type="спец">
+					<input type="radio"  value="спец" onclick="filterFunction(this.value)" autocomplete="off"> Спеціальна
+				</label>
+				<label class="btn btn-success btn-type" data-type="пр">
+					<input type="radio"  value="пр" onclick="filterFunction(this.value)" autocomplete="off"> Практична
+				</label>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<div class="place">
+	<div class="container">
+		<div class="row">
+			<div class="btn-group btn-group-justified" data-toggle="buttons">
+				<div class="btnHeader"><p><b>Місця:</b></p></div>
+
+					<label class="btn btn-success btn-place active" data-place="0">
+                        <input type="radio" autocomplete="off" checked>Всі
+                    </label>					
+					<label class="btn btn-success btn-place" data-place="10">
+                        <input type="radio"  value="10" autocomplete="off"> до 10
+                    </label>
+                    <label class="btn btn-success btn-place" data-place="15">
+                        <input type="radio"  value="15" autocomplete="off"> 11-15
+                    </label>
+                    <label class="btn btn-success btn-place" data-place="20">
+                        <input type="radio"  value="20" autocomplete="off"> 16-20
+                    </label>
+                    <label class="btn btn-success btn-place" data-place="30">
+                        <input type="radio"  value="30"  autocomplete="off"> 21-30
+                    </label>
+                    <label class="btn btn-success btn-place" data-place="31">
+                        <input type="radio" value="31"  autocomplete="off"> більше 31
+                    </label>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+		
+		
+	<div class="container-fluid">
+		<div class="row">
+			<div class="schedule-container">
+				<div class="schedule">
+					<div class="schedule-header">  <h4>Корпус 0</h4></div>
+					<div class="scroll"  id="tableReport"></div>
+				</div>
+				<div class="schedule">
+					<div class="schedule-header">    <h4>Корпус 1</h4></div>
+					<div  class="scroll" id="tableReport1"></div>
+				</div>
+				<div class="schedule">
+					<div class="schedule-header">   <h4>Корпус 3</h4></div>
+					<div  class="scroll"  id="tableReport2"></div>
+				</div>
+				<div class="schedule">
+					<div class="schedule-header">    <h4>Корпус 4</h4></div>
+					<div  class="scroll"  id="tableReport3"></div>
+				</div>
+				<div class="schedule">
+					<div class="schedule-header">    <h4>Корпус 5</h4></div>
+					<div  class="scroll"  id="tableReport4"></div>
+				</div>
+				<div class="schedule">
+					<div class="schedule-header">    <h4>Корпус 7</h4></div>
+					<div  class="scroll"  id="tableReport5"></div>
+				</div>
+				<div class="schedule">
+					<div class="schedule-header">    <h4>Корпус 8</h4></div>
+					<div  class="scroll"  id="tableReport6"></div>
+				</div>
+				<div class="schedule">
+					<div class="schedule-header">    <h4>Корпус 9</h4></div>
+					<div  class="scroll"  id="tableReport7"></div>
+				</div>
+				<div class="schedule">
+					<div class="schedule-header">   <h4>Корпус 12</h4></div>
+					<div  class="scroll"  id="tableReport8"></div>
+				</div>
+				<div class="schedule">
+					<div class="schedule-header">   <h4>Ангар</h4></div>
+					<div  class="scroll"  id="tableReport9"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+											
+
+		<div class="footer">
+			<input id="pick" type="text" />
+		</div>
+
+	</div>
+
+	<script type="text/javascript" src="js/datePicker.js"></script>
+	<script type="text/javascript" src="js/setSeason.js"></script>
+	<script type="text/javascript" src="js/parser.js"></script>
+
+
+	</body>
+	</html>

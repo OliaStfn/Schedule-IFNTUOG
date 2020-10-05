@@ -1,0 +1,42 @@
+.schedule
+{
+	display:inline-block;
+	border: 2px solid #28a745;
+	width: 9.5%;
+}
+
+.schedule-container {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+	padding: 1%;
+	padding-top: 0px;
+}
+
+.schedule-header {
+	background-color: #28a745;
+	color: white;
+	padding: 2px;
+	text-align: center;
+	
+}
+.scroll{
+	overflow: auto;
+	height: 200px;
+	font-size: 12pt;
+}
+
+.type-place{
+	display: flex;
+}
+
+.classroom{
+	padding-left: 8px;
+	border-bottom:  1px solid white;
+}
+
+/*
+.classroom:nth-child(2n) {
+    background: white;  
+} 
+*/

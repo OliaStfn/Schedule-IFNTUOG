@@ -1,0 +1,12 @@
+#lesson_container{
+    margin-top: 5%;
+}
+
+.general {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.btnHeader {
+    margin: 0px 10px 0px;
+}
